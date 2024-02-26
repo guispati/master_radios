@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Master Radios</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/pages/connection.css">
+    </head>
+    <body>
+        <header>
+            <a href="/"></a>
+        </header>
+
+        <main>
+            <section>
+                <div id="content-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <g>
+                          <path d="M52.083 62.5C54.9997 62.5 57.465 61.4931 59.4788 59.4792C61.4927 57.4653 62.4997 55 62.4997 52.0833V29.1667H74.9997V20.8333H58.333V43.75C57.4302 43.0556 56.458 42.5347 55.4163 42.1875C54.3747 41.8403 53.2636 41.6667 52.083 41.6667C49.1663 41.6667 46.7011 42.6736 44.6872 44.6875C42.6733 46.7014 41.6663 49.1667 41.6663 52.0833C41.6663 55 42.6733 57.4653 44.6872 59.4792C46.7011 61.4931 49.1663 62.5 52.083 62.5ZM33.333 75C31.0413 75 29.0795 74.184 27.4476 72.5521C25.8156 70.9202 24.9997 68.9583 24.9997 66.6667V16.6667C24.9997 14.375 25.8156 12.4132 27.4476 10.7813C29.0795 9.14932 31.0413 8.33334 33.333 8.33334H83.333C85.6247 8.33334 87.5865 9.14932 89.2184 10.7813C90.8504 12.4132 91.6664 14.375 91.6664 16.6667V66.6667C91.6664 68.9583 90.8504 70.9202 89.2184 72.5521C87.5865 74.184 85.6247 75 83.333 75H33.333ZM33.333 66.6667H83.333V16.6667H33.333V66.6667ZM16.6663 91.6667C14.3747 91.6667 12.4129 90.8507 10.7809 89.2188C9.14898 87.5868 8.33301 85.625 8.33301 83.3334V25H16.6663V83.3334H74.9997V91.6667H16.6663Z" />
+                        </g>
+                    </svg>
+
+                    <div id="header-title">
+                        <h1>Definições do arquivo de música:</h1>
+                        <p>Configure o carregamento de arquivo de música para aparecer corretamente no display do Rádio.</p>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <form id="form-upload-file" class="form-container" onsubmit="checkFileUpload(event, this)">
+                        <label class="form-control">
+                            <span data-tooltip>
+                                Arraste e solte o arquivo aqui ou clique para carregar:
+                                <div class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
+                                    </svg>
+                                    <div class="tooltip-content">
+                                        Veja no seu computador, onde o seu player de automação de rádio está salvando os arquivos com nomes das músicas. Caso sinta dificuldades, consulte seu profissional de informática ou o suporte do player de automação utilizado.
+                                    </div>
+                                </div>
+                            </span>
+                            <div class="file-container" id="song-file-drop">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                    <g>
+                                        <path d="M23.833 36.8333H28.1663V27.7333L31.633 31.2L34.6663 28.1667L25.9997 19.5L17.333 28.1667L20.3663 31.2L23.833 27.7333V36.8333ZM8.66634 43.3333C7.47467 43.3333 6.45454 42.909 5.60592 42.0604C4.75731 41.2118 4.33301 40.1917 4.33301 39V13C4.33301 11.8083 4.75731 10.7882 5.60592 9.93958C6.45454 9.09097 7.47467 8.66667 8.66634 8.66667H21.6663L25.9997 13H43.333C44.5247 13 45.5448 13.4243 46.3934 14.2729C47.242 15.1215 47.6663 16.1417 47.6663 17.3333V39C47.6663 40.1917 47.242 41.2118 46.3934 42.0604C45.5448 42.909 44.5247 43.3333 43.333 43.3333H8.66634ZM8.66634 39H43.333V17.3333H24.2122L19.8788 13H8.66634V39Z" />
+                                    </g>
+                                </svg>
+                                <span>Arraste o arquivo e solte aqui</span>
+                            </div>
+                            <input id="song-file" type="file" accept=".txt" onchange="handleClick(event)" />
+                        </label>
+
+                        <div class="form-button-container">
+                            <button disabled class="default-button" type="reset" onclick="redirectToPage('/pages/communication')">
+                                << Voltar
+                            </button>
+    
+                            <button disabled class="default-button">
+                                Próximo >>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <strong>&reg; Master Radios</strong> - Todos os direitos reservados.
+            </p>
+        </footer>
+
+        <script src="../js/vanilla-masker.min.js"></script>
+        <script src="../js/scripts.js"></script>
+        <script>
+            const dropArea = document.getElementById('song-file-drop');
+            const inputFile = document.getElementById('song-file');
+
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            dropArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const file = dt.files[0];
+
+                handleFile(file);
+            }
+
+            function handleClick(e) {
+                const fileInput = event.target;
+                const selectedFile = fileInput.files[0];
+
+                handleFile(selectedFile);
+            }
+
+            function handleFile(file) {
+                const textElement = dropArea.getElementsByTagName('span')[0];
+                textElement.textContent = file.name;
+
+                const svgElement = dropArea.getElementsByTagName('svg')[0];
+                const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 464H320c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zM192 272V400c0 6.5-3.9 12.3-9.9 14.8s-12.9 1.1-17.4-3.5L129.4 376H112c-8.8 0-16-7.2-16-16V312c0-8.8 7.2-16 16-16h17.4l35.3-35.3c4.6-4.6 11.5-5.9 17.4-3.5s9.9 8.3 9.9 14.8zm85.8-4c11.6 20 18.2 43.3 18.2 68s-6.6 48-18.2 68c-6.6 11.5-21.3 15.4-32.8 8.8s-15.4-21.3-8.8-32.8c7.5-12.9 11.8-27.9 11.8-44s-4.3-31.1-11.8-44c-6.6-11.5-2.7-26.2 8.8-32.8s26.2-2.7 32.8 8.8z"/></svg>';
+                svgElement.outerHTML = svg;
+
+                const formElement = dropArea.closest('form');
+                const buttons = formElement.querySelectorAll('.default-button');
+                buttons.forEach(element => {
+                    element.disabled = false;
+                });
+            }
+
+            function highlight(e) {
+                dropArea.classList.add('highlight');
+            }
+
+            function unhighlight(e) {
+                dropArea.classList.remove('highlight');
+            }
+        </script>
+    </body>
+</html>

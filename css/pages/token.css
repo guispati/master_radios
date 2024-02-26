@@ -1,0 +1,49 @@
+#form-serial {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#form-serial label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#form-serial label span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1.5rem;
+}
+
+#form-serial label input#serial {
+    border-radius: 8px;
+    background: #E9E8E8;
+    letter-spacing: 8.4px;
+    font-size: 1.5rem;
+    color: #757575;
+    text-align: center;
+    padding: 0.75rem 0;
+    border: none;
+    text-transform: uppercase;
+}
+
+#form-serial label input#serial::placeholder {
+    color: #999;
+}
+
+#form-serial .default-button {
+    align-self: center;
+}
+
+@media (max-width: 992px) {
+    #form-serial label span {
+        font-size: 1rem;
+    }
+
+    #form-serial label input#serial {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+}

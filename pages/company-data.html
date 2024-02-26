@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Master Radios</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+        <header>
+            <a href="/"></a>
+        </header>
+
+        <main>
+            <section>
+                <div id="content-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104">
+                        <g>
+                            <path d="M8.6665 91V20.5833L30.3332 4.33331L51.9998 20.5833V30.3333H95.3332V91H8.6665ZM17.3332 82.3333H25.9998V73.6666H17.3332V82.3333ZM17.3332 65H25.9998V56.3333H17.3332V65ZM17.3332 47.6666H25.9998V39H17.3332V47.6666ZM17.3332 30.3333H25.9998V21.6666H17.3332V30.3333ZM34.6665 30.3333H43.3332V21.6666H34.6665V30.3333ZM34.6665 82.3333H86.6665V39H34.6665V82.3333ZM60.6665 56.3333V47.6666H77.9998V56.3333H60.6665ZM60.6665 73.6666V65H77.9998V73.6666H60.6665ZM43.3332 56.3333V47.6666H51.9998V56.3333H43.3332ZM43.3332 73.6666V65H51.9998V73.6666H43.3332Z" />
+                        </g>
+                    </svg>
+
+                    <div id="header-title">
+                        <h1>Preencha os dados da empresa:</h1>
+                        <p>Preencha com as mesmas informações do cadastro de compra.</p>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <form class="form-container" onsubmit="checkCnpj(event, this)">
+                        <label class="form-control">
+                            <span data-required>
+                                Nome Fantasia:
+                            </span>
+                            <input id="nome_fantasia" type="text" placeholder="Digitar nome da rádio" required />
+                        </label>
+
+                        <label class="form-control">
+                            <span data-required>
+                                Razão Social:
+                            </span>
+                            <input id="razao_social" type="text" placeholder="Digitar razão social" required />
+                        </label>
+
+                        <label class="form-control">
+                            <span data-required>
+                                CNPJ:
+                            </span>
+                            <input id="cnpj" type="text" placeholder="00.000.000/0000-00" required />
+                        </label>
+
+                        <button class="default-button">
+                            Próximo >>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <strong>&reg; Master Radios</strong> - Todos os direitos reservados.
+            </p>
+        </footer>
+
+        <script src="../js/vanilla-masker.min.js"></script>
+        <script src="../js/scripts.js"></script>
+        <script>
+            applyMask('cnpj', document.querySelector('#cnpj'));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+#backdrop-overlay {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    background: rgba(1,29,105,0.5);
+    transition: 0.5s ease-in-out;
+}
+
+#backdrop-overlay.active {
+    opacity: 1;
+    display: block;
+    z-index: 3;
+    overflow: hidden;
+}
+
+#header-admin {
+    margin-bottom: 3rem;
+}
+
+#menu-mobile-btn {
+    display: flex;
+    background: #fff;
+    padding: 1rem;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    border-radius: 8px;
+    border: 1px solid #2C282E;
+    z-index: 5;
+}
+
+#menu-mobile-btn svg {
+    width: 1rem;
+}
+
+#menu-admin {
+    transition: 0.5s ease-in-out;
+    height: 100%;
+    width: 18rem;
+}
+
+@media (max-width: 991px) {
+    #menu-admin[data-mobile='hidden'] {
+        position: fixed;
+        left: -400px;
+    }
+    
+    #menu-admin[data-mobile='show'] {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #F4E280;
+        z-index: 4;
+    }
+}
+
+
+@media (min-width: 992px) {
+    #menu-mobile-btn {
+        display: none;
+    }
+
+    #menu-admin {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 18rem;
+        background: #F4E280;
+    }
+}
+
+#menu-admin .logo-container {
+    background: #2C282E;
+    height: 130px;
+}
+
+#menu-admin .logo-container img {
+    max-height: 110px;
+}
+
+#menu-admin .menu-item {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid rgba(47, 47, 47, 0.12);
+    padding: 2rem;
+    text-align: center;
+    transition: 0.3s;
+    background: #F4E280;
+}
+
+#menu-admin .menu-item:hover {
+    filter: brightness(0.9);
+}
+
+#menu-admin .menu-item.active {
+    background: #fff;
+}
+
+main, footer {
+    transition: .5s ease-in-out;
+}
+
+main.open {
+    padding-left: 15rem;
+    margin-right: -12rem;
+}
+
+footer.open {
+    padding-left: 12rem;
+    margin-right: -12rem;
+}

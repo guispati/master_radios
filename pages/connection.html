@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Master Radios</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/pages/connection.css">
+    </head>
+    <body>
+        <header>
+            <a href="/"></a>
+        </header>
+
+        <main>
+            <section>
+                <div id="content-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104">
+                        <g>
+                          <path d="M51.9998 95.3333C49.6165 95.3333 47.5762 94.4847 45.879 92.7875C44.1818 91.0903 43.3332 89.05 43.3332 86.6666C43.3332 85.15 43.7304 83.7416 44.5248 82.4417C45.3193 81.1416 46.3665 80.0944 47.6665 79.3V69.3333H34.6665C32.2832 69.3333 30.2429 68.4847 28.5457 66.7875C26.8484 65.0903 25.9998 63.05 25.9998 60.6667V50.7C24.6998 50.05 23.6526 49.075 22.8582 47.775C22.0637 46.475 21.6665 44.9944 21.6665 43.3333C21.6665 40.95 22.5151 38.9097 24.2123 37.2125C25.9096 35.5153 27.9498 34.6667 30.3332 34.6667C32.7165 34.6667 34.7568 35.5153 36.454 37.2125C38.1512 38.9097 38.9998 40.95 38.9998 43.3333C38.9998 44.9944 38.6026 46.4389 37.8082 47.6667C37.0137 48.8944 35.9665 49.9055 34.6665 50.7V60.6667H47.6665V26H38.9998L51.9998 8.66666L64.9998 26H56.3332V60.6667H69.3332V52H64.9998V34.6667H82.3332V52H77.9998V60.6667C77.9998 63.05 77.1512 65.0903 75.454 66.7875C73.7568 68.4847 71.7165 69.3333 69.3332 69.3333H56.3332V79.3C57.7054 80.0222 58.7707 81.0333 59.529 82.3333C60.2873 83.6333 60.6665 85.0778 60.6665 86.6666C60.6665 89.05 59.8179 91.0903 58.1207 92.7875C56.4235 94.4847 54.3832 95.3333 51.9998 95.3333Z" />
+                        </g>
+                      </svg>
+
+                    <div id="header-title">
+                        <h1>Modelo de RDS e Conexão:</h1>
+                        <p>Informe o modelo do seu RDS e as informações para conexão correta com a rede.</p>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <form id="form-connection" class="form-container" onsubmit="checkConnection(event, this)">
+                        <label class="form-control">
+                            <span data-required>
+                                Modelo de RDS:
+                            </span>
+                            <select id="modelo_rds" required>
+                                <option value="" selected disabled>Escolhe o modelo...</option>
+                                <option value="1">Modelo 1</option>
+                                <option value="2">Modelo 2</option>
+                                <option value="3">Modelo 3</option>
+                                <option value="4">Modelo 4</option>
+                                <option value="5">Modelo 5</option>
+                            </select>
+                        </label>
+
+                        <label class="form-control">
+                            <span data-required>
+                                Tipo de Conexão:
+                            </span>
+                            <div class="double-input">
+                                <label>
+                                    <span data-tooltip>
+                                        Velocidade (speed):
+                                        <div class="tooltip">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
+                                            </svg>
+                                            <div class="tooltip-content">
+                                                Você encontra essa informação no manual do RDS que será conectado.
+                                            </div>
+                                        </div>
+                                    </span>
+                                    <select id="velocidade" required>
+                                        <option value="" selected disabled>Selecionar...</option>
+                                        <option value="1">Velocidade 1</option>
+                                        <option value="2">Velocidade 2</option>
+                                        <option value="3">Velocidade 3</option>
+                                        <option value="4">Velocidade 4</option>
+                                        <option value="5">Velocidade 5</option>
+                                    </select>
+                                </label>
+
+                                <label>
+                                    <span data-tooltip>
+                                        Porta (Port):
+                                        <div class="tooltip">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
+                                            </svg>
+                                            <div class="tooltip-content">
+                                                Você encontra essa informação no manual do RDS que será conectado.
+                                            </div>
+                                        </div>
+                                    </span>
+                                    <select id="porta" required>
+                                        <option value="" selected disabled>Selecionar...</option>
+                                        <option value="1">Porta 1</option>
+                                        <option value="2">Porta 2</option>
+                                        <option value="3">Porta 3</option>
+                                        <option value="4">Porta 4</option>
+                                        <option value="5">Porta 5</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </label>
+
+                        <div class="form-button-container">
+                            <button class="default-button" type="reset" onclick="redirectToPage('/pages/company-data')">
+                                << Voltar
+                            </button>
+    
+                            <button class="default-button">
+                                Próximo >>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <strong>&reg; Master Radios</strong> - Todos os direitos reservados.
+            </p>
+        </footer>
+
+        <script src="../js/vanilla-masker.min.js"></script>
+        <script src="../js/scripts.js"></script>
+    </body>
+</html>

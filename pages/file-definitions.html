@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Master Radios</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/pages/file-definitions.css">
+    </head>
+    <body>
+        <header>
+            <a href="/"></a>
+        </header>
+
+        <main>
+            <section>
+                <div id="content-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <g>
+                          <path d="M52.083 62.5C54.9997 62.5 57.465 61.4931 59.4788 59.4792C61.4927 57.4653 62.4997 55 62.4997 52.0833V29.1667H74.9997V20.8333H58.333V43.75C57.4302 43.0556 56.458 42.5347 55.4163 42.1875C54.3747 41.8403 53.2636 41.6667 52.083 41.6667C49.1663 41.6667 46.7011 42.6736 44.6872 44.6875C42.6733 46.7014 41.6663 49.1667 41.6663 52.0833C41.6663 55 42.6733 57.4653 44.6872 59.4792C46.7011 61.4931 49.1663 62.5 52.083 62.5ZM33.333 75C31.0413 75 29.0795 74.184 27.4476 72.5521C25.8156 70.9202 24.9997 68.9583 24.9997 66.6667V16.6667C24.9997 14.375 25.8156 12.4132 27.4476 10.7813C29.0795 9.14932 31.0413 8.33334 33.333 8.33334H83.333C85.6247 8.33334 87.5865 9.14932 89.2184 10.7813C90.8504 12.4132 91.6664 14.375 91.6664 16.6667V66.6667C91.6664 68.9583 90.8504 70.9202 89.2184 72.5521C87.5865 74.184 85.6247 75 83.333 75H33.333ZM33.333 66.6667H83.333V16.6667H33.333V66.6667ZM16.6663 91.6667C14.3747 91.6667 12.4129 90.8507 10.7809 89.2188C9.14898 87.5868 8.33301 85.625 8.33301 83.3334V25H16.6663V83.3334H74.9997V91.6667H16.6663Z" />
+                        </g>
+                    </svg>
+
+                    <div id="header-title">
+                        <h1>Definições do arquivo de música:</h1>
+                        <p>Configure o carregamento de arquivo de música para aparecer corretamente no display do Rádio.</p>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <form id="form-file-definitions" class="form-container" onsubmit="checkFileDefinitions(event, this)">
+                        <div class="form-card">
+                            <label class="form-control">
+                                <h2>Arquivo de música selecionado (caminho):</h2>
+                                <div class="file-container-sm" id="selected-song-file">
+                                    <span>
+                                        Clique para trocar o arquivo selecionado.
+                                    </span>
+                                    <div class="file-container-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29">
+                                            <g mask="url(#mask0_6_489)">
+                                                <path d="M13.291 20.5417H15.7077V15.4667L17.641 17.4L19.3327 15.7083L14.4993 10.875L9.66602 15.7083L11.3577 17.4L13.291 15.4667V20.5417ZM4.83268 24.1667C4.1681 24.1667 3.59918 23.93 3.12591 23.4568C2.65265 22.9835 2.41602 22.4146 2.41602 21.75V7.24999C2.41602 6.58541 2.65265 6.01649 3.12591 5.54322C3.59918 5.06996 4.1681 4.83333 4.83268 4.83333H12.0827L14.4993 7.24999H24.166C24.8306 7.24999 25.3995 7.48663 25.8728 7.95989C26.346 8.43315 26.5827 9.00208 26.5827 9.66666V21.75C26.5827 22.4146 26.346 22.9835 25.8728 23.4568C25.3995 23.93 24.8306 24.1667 24.166 24.1667H4.83268ZM4.83268 21.75H24.166V9.66666H13.5025L11.0858 7.24999H4.83268V21.75Z"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <input id="song-file" type="file" onchange="handleClick(event)" />
+                            </label>
+
+                            <label class="form-control">
+                                <h2>Pré-Visualização do Conteúdo:</h2>
+                                <div class="form-background">AEV; Flowers; Miley Cyrus; RDS</div>
+                            </label>
+                        </div>
+
+                        <div class="form-card">
+                            <label class="form-control terms">
+                                <h2>Remover Termos Desnecessários</h2>
+                                
+                                <div class="input-with-button">
+                                    <input id="termo_exclusao" type="text" placeholder="Digite o termo que quer excluir" />
+                                    <button class="default-button" onclick="addTerm(event)">
+                                        <div class="plus-icon">+</div>
+                                        <span>Excluir</span>
+                                    </button>
+                                </div>
+
+                                <div id="terms-container">
+                                    <div class="form-background">
+                                        <span class="term-tag" onclick="toggleSelection(this)">
+                                            AEV
+                                        </span>
+                                        <span class="term-tag" onclick="toggleSelection(this)">
+                                            AEV
+                                        </span>
+                                        <span class="term-tag" onclick="toggleSelection(this)">
+                                            AEV
+                                        </span>
+                                        <span class="term-tag" onclick="toggleSelection(this)">
+                                            AEV
+                                        </span>
+                                        <span class="term-tag" onclick="toggleSelection(this)">
+                                            AEV
+                                        </span>
+                                    </div>
+                                    <button class="default-button" onclick="removeSelectedTermTags(event)">
+                                        <div class="minus-icon">-</div>
+                                        <span>Remover</span>
+                                    </button>
+                                </div>
+
+                            </label>
+                        </div>
+
+                        <div class="form-card">
+                            <label class="form-control">
+                                <h2 data-tooltip>
+                                    Configurações de velocidade de texto:
+                                    <div class="tooltip">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
+                                        </svg>
+                                        <div class="tooltip-content">
+                                            Aqui você pode escolher a velocidade em que cada bloco de texto irá aparecer no display do rádio (nome da rádio, slogan, temperatura). Indique o número de repetições por música e o intervalo de tempo entre uma aparição e outra. Caso queira que fique fixo, deixe zero no nº de repetições.
+                                        </div>
+                                    </div>
+                                </h2>
+
+                                <p>
+                                    Ex: Ao selecionar 2 repetições a cada 10”, primeiro aparecerá o Nome da Rádio, depois de 10”, o Slogan/Frase, após mais 10”, a Temperatura. E o processo será repetido mais uma vez.
+                                </p>
+
+                                <div id="text-speed-container">
+                                    <div class="text-speed-header">
+                                        <span class="grid-separator">Nº Repetições</span>
+                                        <span>Intervalo de Tempo</span>
+                                    </div>
+                                    <div class="text-speed-content">
+                                        <div class="quantity-container grid-separator">
+                                            <div class="quantity-btn" onclick="changeQuantity(-1)">-</div>
+                                            <input id="quantity-input" type="number" min="1" value="1" />
+                                            <div class="quantity-btn" onclick="changeQuantity(1)">+</div>
+                                        </div>
+                                        <div id="slider-container">
+                                            <datalist id="time-markers">
+                                                <option value="5">05”</option>
+                                                <option value="10">10”</option>
+                                                <option value="15">15”</option>
+                                                <option value="20">20”</option>
+                                                <option value="25">25”</option>
+                                                <option value="30">30”</option>
+                                                <option value="35">35”</option>
+                                                <option value="40">40”</option>
+                                                <option value="45">45”</option>
+                                                <option value="50">50”</option>
+                                                <option value="55">55”</option>
+                                                <option value="60">60”</option>
+                                            </datalist>
+                                            <input id="intervalo-tempo" min="5" max="60" type="range" value="30" step="5" list="time-markers" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="text-speed-mobile-container">
+                                    <div class="text-speed-header">
+                                        <span>Nº Repetições</span>
+                                    </div>
+                                    <div class="text-speed-content">
+                                        <div class="quantity-container">
+                                            <div class="quantity-btn" onclick="changeQuantity(-1)">-</div>
+                                            <input id="quantity-input" type="number" min="1" value="1" />
+                                            <div class="quantity-btn" onclick="changeQuantity(1)">+</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-speed-header">
+                                        <span>Intervalo de Tempo</span>
+                                    </div>
+
+                                    <div class="text-speed-content">
+                                        <div id="slider-container">
+                                            <datalist id="time-markers">
+                                                <option value="5">05”</option>
+                                                <option value="10">10”</option>
+                                                <option value="15">15”</option>
+                                                <option value="20">20”</option>
+                                                <option value="25">25”</option>
+                                                <option value="30">30”</option>
+                                                <option value="35">35”</option>
+                                                <option value="40">40”</option>
+                                                <option value="45">45”</option>
+                                                <option value="50">50”</option>
+                                                <option value="55">55”</option>
+                                                <option value="60">60”</option>
+                                            </datalist>
+                                            <input id="intervalo-tempo" min="5" max="60" type="range" value="30" step="5" list="time-markers" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="form-button-container">
+                            <button class="default-button" type="reset" onclick="redirectToPage('/pages/upload-file')">
+                                << Voltar
+                            </button>
+    
+                            <button class="default-button">
+                                Salvar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <strong>&reg; Master Radios</strong> - Todos os direitos reservados.
+            </p>
+        </footer>
+
+        <script src="../js/vanilla-masker.min.js"></script>
+        <script src="../js/scripts.js"></script>
+        <script>
+            const selectedFile = document.getElementById('selected-song-file');
+            const inputFile = document.getElementById('song-file');
+
+            function handleClick(e) {
+                const fileInput = event.target;
+                const selectedFile = fileInput.files[0];
+
+                handleFile(selectedFile);
+            }
+
+            function handleFile(file) {
+                const textElement = selectedFile.getElementsByTagName('span')[0];
+                textElement.textContent = file.name;
+            }
+
+            function addTerm(event) {
+                event.preventDefault();
+                var termValue = document.getElementById("termo_exclusao").value;
+
+                if (termValue.trim() !== "") {
+                    var newTermTag = document.createElement("span");
+                    newTermTag.className = "term-tag";
+                    newTermTag.textContent = termValue;
+                    newTermTag.onclick = function () {
+                        toggleSelection(this);
+                    };
+
+                    document.getElementById("terms-container").querySelector('.form-background').appendChild(newTermTag);
+
+                    document.getElementById("termo_exclusao").value = "";
+                }
+            }
+
+            function toggleSelection(termTag) {
+                termTag.classList.toggle("selected");
+            }
+
+            function selectTermTag(event) {
+                var clickedElement = event.target;
+
+                if (clickedElement.classList.contains("term-tag")) {
+                    toggleSelection(clickedElement);
+                }
+            }
+
+            function removeSelectedTermTags(event) {
+                event.preventDefault();
+                var selectedTermTags = document.querySelectorAll(".term-tag.selected");
+
+                selectedTermTags.forEach(function (termTag) {
+                    termTag.remove();
+                });
+            }
+
+            function changeQuantity(valueChange) {
+                var quantityInput = document.getElementById("quantity-input");
+                var currentValue = parseInt(quantityInput.value, 10);
+
+                var newValue = Math.max(currentValue + valueChange, 1);
+
+                quantityInput.value = newValue;
+            }
+        </script>
+    </body>
+</html>

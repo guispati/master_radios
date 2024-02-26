@@ -1,0 +1,187 @@
+#form-file-definitions .form-control.terms {
+    gap: 1.5rem;
+}
+
+#form-file-definitions #terms-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+#form-file-definitions #terms-container .form-background {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#form-file-definitions #terms-container .term-tag {
+    border-radius: 18px;
+    background: #F7F6F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    color: #000;
+    font-weight: 500;
+}
+
+#form-file-definitions #terms-container .term-tag:hover {
+    background: var(--primary);
+    cursor: pointer;
+    transition: 0.3s;
+    filter: brightness(.9)
+}
+
+#form-file-definitions #terms-container .term-tag.selected {
+    background: var(--primary);
+}
+
+#form-file-definitions #terms-container button {
+    align-self: auto;
+}
+
+#form-file-definitions .form-control button {
+    width: 120px;
+    height: 51px;
+}
+
+#form-file-definitions .form-control button span {
+    font-size: 0.875rem;
+}
+
+#form-file-definitions #text-speed-mobile-container {
+    display: none;
+}
+
+#form-file-definitions #text-speed-container {
+    display: flex;   
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+#form-file-definitions #text-speed-container .text-speed-header {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    background: var(--primary);
+    padding: 1rem;
+}
+
+#form-file-definitions #text-speed-container .text-speed-header span {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+#form-file-definitions #text-speed-container .text-speed-content {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    padding: 1rem;
+}
+
+#form-file-definitions #text-speed-container .text-speed-content .quantity-container {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+#form-file-definitions #text-speed-container .text-speed-content .quantity-container .quantity-btn {
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    line-height: 0;
+    cursor: pointer;
+}
+
+#form-file-definitions #text-speed-container .grid-separator {
+    padding-right: 2rem;
+    border-right: 1px solid #000;
+}
+
+#form-file-definitions #text-speed-container .text-speed-header > *:not(.grid-separator),
+#form-file-definitions #text-speed-container .text-speed-content > *:not(.grid-separator) {
+    padding-left: 1rem;
+}
+
+#form-file-definitions #slider-container datalist {
+    font-size: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    text-align: center;
+    margin: 0 -0.75rem;
+}
+
+@media (max-width: 992px) {
+    #form-file-definitions .form-control button {
+        width: 100%;
+    }
+
+    #form-file-definitions #terms-container {
+        display: block;
+    }
+
+    #form-file-definitions #text-speed-container {
+        display: none;
+    }
+
+    #form-file-definitions #text-speed-mobile-container {
+        display: flex;   
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    #form-file-definitions #text-speed-mobile-container .text-speed-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        padding: 1rem;
+    }
+    
+    #form-file-definitions #text-speed-mobile-container .text-speed-header span {
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    
+    #form-file-definitions #text-speed-mobile-container .text-speed-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    #form-file-definitions #text-speed-mobile-container .text-speed-content .quantity-container {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    
+    #form-file-definitions #text-speed-mobile-container .text-speed-content .quantity-container .quantity-btn {
+        background: #000;
+        color: #fff;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
+        line-height: 0;
+        cursor: pointer;
+    }
+    
+    #form-file-definitions #text-speed-mobile-container .text-speed-header > *:not(.grid-separator),
+    #form-file-definitions #text-speed-mobile-container .text-speed-content > *:not(.grid-separator) {
+        padding-left: 1rem;
+    }
+}

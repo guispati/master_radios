@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Master Radios</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/pages/login.css">
+    </head>
+    <body>
+        <header>
+            <a href="/"></a>
+        </header>
+
+        <main>
+            <section>
+                <div id="content-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101 101">
+                        <g>
+                            <path d="M50.5 50.5C45.8708 50.5 41.908 48.8517 38.6115 45.5552C35.3149 42.2587 33.6667 38.2958 33.6667 33.6667C33.6667 29.0375 35.3149 25.0747 38.6115 21.7781C41.908 18.4816 45.8708 16.8333 50.5 16.8333C55.1292 16.8333 59.092 18.4816 62.3886 21.7781C65.6851 25.0747 67.3333 29.0375 67.3333 33.6667C67.3333 38.2958 65.6851 42.2587 62.3886 45.5552C59.092 48.8517 55.1292 50.5 50.5 50.5ZM16.8333 84.1667V72.3833C16.8333 69.9986 17.4471 67.8068 18.6745 65.8078C19.9019 63.8089 21.5326 62.2833 23.5667 61.2313C27.9153 59.057 32.334 57.4262 36.8229 56.3391C41.3118 55.2519 45.8708 54.7083 50.5 54.7083C55.1292 54.7083 59.6882 55.2519 64.1771 56.3391C68.666 57.4262 73.0847 59.057 77.4333 61.2313C79.4674 62.2833 81.0981 63.8089 82.3255 65.8078C83.553 67.8068 84.1667 69.9986 84.1667 72.3833V84.1667H16.8333ZM25.25 75.75H75.75V72.3833C75.75 71.6118 75.5571 70.9104 75.1714 70.2792C74.7856 69.6479 74.2771 69.157 73.6458 68.8063C69.8583 66.9125 66.0358 65.4922 62.1781 64.5453C58.3205 63.5985 54.4278 63.125 50.5 63.125C46.5722 63.125 42.6795 63.5985 38.8219 64.5453C34.9642 65.4922 31.1417 66.9125 27.3542 68.8063C26.7229 69.157 26.2144 69.6479 25.8287 70.2792C25.4429 70.9104 25.25 71.6118 25.25 72.3833V75.75ZM50.5 42.0833C52.8146 42.0833 54.796 41.2592 56.4443 39.6109C58.0925 37.9627 58.9167 35.9813 58.9167 33.6667C58.9167 31.3521 58.0925 29.3707 56.4443 27.7224C54.796 26.0741 52.8146 25.25 50.5 25.25C48.1854 25.25 46.204 26.0741 44.5557 27.7224C42.9075 29.3707 42.0833 31.3521 42.0833 33.6667C42.0833 35.9813 42.9075 37.9627 44.5557 39.6109C46.204 41.2592 48.1854 42.0833 50.5 42.0833Z" />
+                        </g>
+                      </svg>
+
+                    <div id="header-title">
+                        <h1>Faça o login</h1>
+                        <p>Preencha com as mesmas informações do cadastro de compra.</p>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <form class="form-container" onsubmit="checkLogin(event, this)">
+                        <label class="form-control">
+                            <span data-required>
+                                Usuário:
+                            </span>
+                            <input id="login" type="text" placeholder="Digitar nome do usuário..." required />
+                        </label>
+
+                        <label class="form-control">
+                            <span data-required>
+                                Senha:
+                            </span>
+                            <input id="password" type="password" placeholder="Digitar a senha..." required />
+                        </label>
+
+                        <a class="forgot-password" href="#" target="_blank">Esqueceu a senha?</a>
+
+                        <button class="default-button">
+                            Entrar
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <strong>&reg; Master Radios</strong> - Todos os direitos reservados.
+            </p>
+        </footer>
+
+        <script src="/js/vanilla-masker.min.js"></script>
+        <script src="/js/scripts.js"></script>
+        <script>
+        </script>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Master Radios</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+        <header>
+            <a href="/"></a>
+        </header>
+
+        <main>
+            <section>
+                <div id="content-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 120">
+                        <g>
+                          <path d="M21.5417 87.1579C15.5361 87.1579 10.4444 84.5017 6.26667 79.1892C2.08889 73.8767 0 67.4021 0 59.7654C0 52.1287 2.08889 45.6541 6.26667 40.3416C10.4444 35.0292 15.5361 32.3729 21.5417 32.3729C23.9569 32.3729 26.2743 32.9125 28.4938 33.9916C30.7132 35.0707 32.7042 36.6063 34.4667 38.5985L41.125 46.3182L35.25 53.0418L29.1792 46.0692C28.1347 44.9071 26.9597 43.994 25.6542 43.3299C24.3486 42.6659 22.9778 42.3338 21.5417 42.3338C17.7556 42.3338 14.5243 44.0355 11.8479 47.4388C9.17153 50.8421 7.83333 54.951 7.83333 59.7654C7.83333 64.5799 9.17153 68.6887 11.8479 72.092C14.5243 75.4953 17.7556 77.197 21.5417 77.197C22.9778 77.197 24.3486 76.865 25.6542 76.2009C26.9597 75.5368 28.1347 74.6238 29.1792 73.4617L59.5333 38.5985C61.2958 36.6063 63.2868 35.0707 65.5063 33.9916C67.7257 32.9125 70.0431 32.3729 72.4583 32.3729C78.4639 32.3729 83.5556 35.0292 87.7333 40.3416C91.9111 45.6541 94 52.1287 94 59.7654C94 67.4021 91.9111 73.8767 87.7333 79.1892C83.5556 84.5017 78.4639 87.1579 72.4583 87.1579C70.0431 87.1579 67.7257 86.6184 65.5063 85.5393C63.2868 84.4602 61.2958 82.9245 59.5333 80.9323L52.875 73.2126L58.75 66.489L64.8208 73.4617C65.8653 74.6238 67.0403 75.5368 68.3458 76.2009C69.6514 76.865 71.0222 77.197 72.4583 77.197C76.2444 77.197 79.4757 75.4953 82.1521 72.092C84.8285 68.6887 86.1667 64.5799 86.1667 59.7654C86.1667 54.951 84.8285 50.8421 82.1521 47.4388C79.4757 44.0355 76.2444 42.3338 72.4583 42.3338C71.0222 42.3338 69.6514 42.6659 68.3458 43.3299C67.0403 43.994 65.8653 44.9071 64.8208 46.0692L34.4667 80.9323C32.7042 82.9245 30.7132 84.4602 28.4938 85.5393C26.2743 86.6184 23.9569 87.1579 21.5417 87.1579Z" />
+                        </g>
+                    </svg>
+
+                    <div id="header-title">
+                        <h1>Configure a comunicação do RDS.</h1>
+                        <p>Preencha as informações necessárias para carregar o arquivo.</p>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <form id="form-communication" class="form-container" onsubmit="checkCommunication(event, this)">
+                        <label class="form-control">
+                            <span data-tooltip>
+                                Nome da Rádio no RDS:
+                                <div class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
+                                    </svg>
+                                    <div class="tooltip-content">
+                                        Coloque o nome que você quer que o Ouvinte veja em até 20 caracteres. O nome da rádio virá na parte de cima do displays do rádio, antes do nome da música e cantor.
+                                    </div>
+                                </div>
+                            </span>
+                            <div class="char-count-wrapper">
+                                <input id="nome_radio" type="text" placeholder="Digitar nome da rádio" required />
+                                <div class="char-count-container">
+                                    <span class="char-count">0</span>/20
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="form-control">
+                            <span data-tooltip>
+                                Slogan ou Frase Destaque:
+                                <div class="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" />
+                                    </svg>
+                                    <div class="tooltip-content">
+                                        Frase de destaque ou slogan da emissora em até 30 caracteres. Aparecerá na sequência do nome da rádio.
+                                    </div>
+                                </div>
+                            </span>
+                            <div class="char-count-wrapper">
+                                <input id="slogan" type="text" placeholder="Digitar slogan" required />
+                                <div class="char-count-container">
+                                    <span class="char-count">0</span>/30
+                                </div>
+                            </div>
+                        </label>
+
+                        <div class="form-card">
+                            <label class="checkbox-form-control">
+                                <input type="checkbox" id="temperatura_media" />
+                                <span>Habilitar Temperatura Média</span>
+                            </label>
+
+                            <div class="double-input">
+                                <label class="form-control">
+                                    <span>Estado:</span>
+                                    <select id="estado" disabled>
+                                        <option value="" selected disabled>Clique para escolher...</option>
+                                    </select>
+                                </label>
+
+                                <label class="form-control">
+                                    <span>Cidade:</span>
+                                    <select id="cidade" disabled>
+                                        <option value="" selected disabled>Clique para escolher...</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-button-container">
+                            <button class="default-button" type="reset" onclick="redirectToPage('/pages/connection')">
+                                << Voltar
+                            </button>
+    
+                            <button class="default-button next-button">
+                                Próximo >>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <strong>&reg; Master Radios</strong> - Todos os direitos reservados.
+            </p>
+        </footer>
+
+        <script src="../js/vanilla-masker.min.js"></script>
+        <script src="../js/scripts.js"></script>
+        <script>
+            const nomeRadioInput = document.getElementById('nome_radio');
+            const nomeRadioLength = 20;
+            nomeRadioInput.addEventListener('input', () => {
+                checkInputLength(nomeRadioInput, nomeRadioLength);
+            });
+
+            const sloganInput = document.getElementById('slogan');
+            const sloganLength = 30;
+            sloganInput.addEventListener('input', () => {
+                checkInputLength(sloganInput, sloganLength);
+            });
+
+            const checkbox = document.getElementById('temperatura_media');
+            const estadoDropdown = document.getElementById('estado');
+            const cidadeDropdown = document.getElementById('cidade');
+
+            fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(item => {
+                        const option = document.createElement('option');
+                        option.value = item.id;
+                        option.textContent = item.nome;
+                        estadoDropdown.appendChild(option);
+                    });
+                });
+
+            estadoDropdown.addEventListener('change', function () {
+                const selectedEstadoId = estadoDropdown.value;
+
+                fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedEstadoId}/municipios`)
+                    .then(response => response.json())
+                    .then(cidadesData => {
+                        cidadeDropdown.innerHTML = '';
+
+                        const defaultOption = document.createElement('option');
+                        defaultOption.value = '';
+                        defaultOption.textContent = 'Clique para escolher...';
+                        defaultOption.disabled = true;
+                        cidadeDropdown.appendChild(defaultOption);
+
+                        cidadesData.forEach(cidade => {
+                            const option = document.createElement('option');
+                            option.value = cidade.id;
+                            option.textContent = cidade.nome;
+                            cidadeDropdown.appendChild(option);
+                        });
+                    });
+            });
+
+            checkbox.addEventListener('change', function () {
+                const isChecked = checkbox.checked;
+
+                estadoDropdown.required = cidadeDropdown.required = isChecked;
+                estadoDropdown.disabled = cidadeDropdown.disabled = !isChecked;
+
+                if (!isChecked) {
+                    estadoDropdown.value = cidadeDropdown.value = '';
+                }
+            });
+        </script>
+    </body>
+</html>
